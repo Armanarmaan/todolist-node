@@ -8,18 +8,19 @@ exports.users = function (req, res) {
         if (error) {
             console.log(error)
         } else {
-            console.log(rows)
+            //console.log(rows)
+            res.status(200)
+            res.json(rows)
             //response.ok(rows, res)
         }
     });
 };
 
 exports.createTask = function (req, res) {
-
-    var task = req.body.task;
-    var status = 1;
-
-    connection.query('INSERT INTO todos (task, status) values (?,?)',
+    //console.log(req.body.task)
+    let task = req.body.task;
+    let status = 1;
+    connection.query('INSERT INTO todo (task, status) values (?,?)',
         [task, status],
         function (error, rows, fields) {
             if (error) {
