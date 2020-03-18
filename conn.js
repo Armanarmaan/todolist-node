@@ -7,8 +7,8 @@ var con = mysql.createConnection({
   database: "db_toDoList"
 });
 
-con.connect(function (err){
-    if(err) throw err;
+con.connect(function (err) {
+  if (err) throw err;
 });
 
 module.exports = con;
